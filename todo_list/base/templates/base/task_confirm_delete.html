@@ -1,7 +1,13 @@
-<a href="{% url 'tasks' %}">&lt; Go Back</a>
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="box">
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <p>Confirm Deletion of {{task}}?</p>
-    <input type="submit" value="Delete">
-</form>
+    <a class="goback" href="{% url 'tasks' %}">&lt; Go Back</a>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <p>Confirm Deletion of <br> {{task}}?</p>
+        <input class="delete" type="submit" value="Delete">
+    </form>
+</div>
+{% endblock content %}
