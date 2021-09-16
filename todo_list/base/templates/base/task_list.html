@@ -1,27 +1,32 @@
-{% if request.user.is_authenticated %}
-    <h2>{{request.user}}</h2>
-    <a href="{% url 'logout' %}">Log Out</a>
-{%else%}
-    <a href="{% url 'login' %}">Log In</a>
-{%endif%}
-<hr>
-<h1>my To do List</h1>
-<a href="{% url 'task-create' %}"> Add Task</a>
+{% extends 'base/main.html' %}
+{% block content %}
 
-<table>
-    <tr>
-        <th>Item</th>
-        <th></th>
-    </tr>
-    {% for task in tasks %}
-        <tr>
-            <td>{{task.title}}</td>
-            <td><a href="{% url 'task' task.id %}">View</a></td>
-            <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
-            <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
-        </tr>
-    {% empty %}
-    <h3>No Items in the list</h3>
-    {%endfor%}
+<div class="box">
 
-</table>
+    <h1 class="welcome" >Welcome {{request.user}}.</h1>
+    <p>You are logged in.</p>
+    
+    <hr>
+    <h1 class="todo">TO DO LIST</h1>
+    <div class="addtask">
+        <a href="{% url 'task-create' %}">Add Task +</a>
+    </div>
+    <h3>Items</h3>  
+    <hr>  
+        {% for task in tasks %}
+        <div class="content">
+            <div class="title">
+                <p>{{task.title}}</p>
+            </div>
+            <a class="edit" href="{% url 'task-update' task.id %}">Edit</a>
+            <a class="edit" href="{% url 'task-delete' task.id %}">Delete</a>
+        </div>
+        {% empty %}
+        <h3>No Items in the list</h3>
+        {%endfor%}     
+        <div class="addtask">
+            <a href="{% url 'logout' %}">Log Out</a>
+        </div> 
+</div>
+    {% endblock content %}
+

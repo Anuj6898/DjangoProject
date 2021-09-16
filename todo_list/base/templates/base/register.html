@@ -1,7 +1,18 @@
-<h1>Register</h1>
-<form action="" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Register">
-</form>
-<h3>Already have an account?<a href="{% url 'login' %}">Login</a></h3>
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="box">
+
+    <h1 class="credhead">Register</h1>
+    <form class="registerform" action="" method="POST">
+        {% csrf_token %}
+        <label>{{form.username.label}}:</label>
+        {{form.username}}
+        <label>{{form.password1.label}}:</label>
+        {{form.password1}}
+        <label>Confirm Password:</label>
+        {{form.password2}}
+        <input class="lr-btn" type="submit" value="Register">
+    </form>
+    <h3 class="account">Already have an account?<a class="lr" href="{% url 'login' %}">Login</a></h3>
+</div>
+{% endblock content %}

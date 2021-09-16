@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship_Project</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+    *{
+        margin: 0;padding: 0;font-family: 'Roboto', sans-serif;
+    }
+    body{
+        background: rgb(205, 222, 248);
+        color: #333;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    input{
+        border: none;
+        padding: .5em;
+        margin: .5em;
+        background: rgb(224, 224, 224);
+    }
+    .box{
+        padding: 3.5em;
+        box-shadow: 0 0 10px 2px gray;
+        background: rgb(248, 248, 248);
+    }
+    h1,h2,h3{
+        text-align: center;
+    }
+    .todo{
+        margin: .6em 0;
+    }
+    .credhead{
+        padding-bottom: .5em;
+        text-transform: uppercase;
+    }
+    label{
+        color: #777;
+        font-style: italic;
+        }
+    .lr{
+        background: transparent;
+        color: rgb(184, 68, 184);
+        padding: 0;
+        margin: 0;
+    }
+    .lr:hover{
+        text-decoration: underline;
+        color: rgb(173, 9, 173);
+        cursor: pointer;
+    }
+    .lr-btn{
+        background: rgb(91, 101, 255);
+        color: white;
+        padding: .5em 1.5em;
+        box-shadow: 0 1px 5px 1px gray;
+        text-transform: uppercase;
+    }
+    .lr-btn:hover{
+        background: rgb(59, 72, 255);
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+    .delete{
+        background: rgb(250, 76, 76);
+        color: white;
+        cursor: pointer;
+    }
+    .edit{
+        color: #777;
+    }
+    .edit:hover{
+        text-decoration: underline;
+    }
+    .registerform{
+        display: flex;
+        flex-direction: column;
+    }
+    .account{
+        font-size: 15px;
+        color: #777;
+    }
+    .welcome{
+        color: skyblue;
+    }
+    .addtask{
+        padding: .5em;
+        background: rgb(56, 170, 72);
+        margin: 1em 0 ;
+        text-align: center;
+        box-shadow: 0 1px 5px 1px gray;
+        cursor: pointer;        
+    }
+    .addtask:hover{
+        background: rgb(24, 155, 42);
+        transform: scale(1.05);
+    }
+    p{
+        font-style: italic;
+        text-align: center;
+        margin: .2em;
+    }
+    
+    .content{
+        margin-top: 1em;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .goback{
+        color: #333;
+    }
+    .goback:hover{
+        text-decoration: underline;
+    }
+</style>
+<body>
+    <div class="container">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+</body>
+</html>
