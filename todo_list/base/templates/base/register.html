@@ -5,9 +5,10 @@
     <h1 class="credhead">Register</h1>
     <form class="registerform" action="" method="POST">
         {% csrf_token %}
+        <!-- {{form.as_p}} -->
         <label>{{form.username.label}}:</label>
         {{form.username}}
-        <label>{{form.password1.label}}:</label>
+        <label>{{form.password1.label}}: <p class="min">*Min. 8 characters</p></label>
         {{form.password1}}
         <label>Confirm Password:</label>
         {{form.password2}}
